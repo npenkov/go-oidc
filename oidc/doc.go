@@ -1,2 +1,2 @@
-// Package oidc is DEPRECATED. Use github.com/coreos/go-oidc instead.
+// Package oidc is DEPRECATED. Use github.com/npenkov/go-oidc instead.
 package oidc

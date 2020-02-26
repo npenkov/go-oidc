@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/coreos/go-oidc/jose"
+	"github.com/npenkov/go-oidc/jose"
 )
 
 func TestCookieTokenExtractorInvalid(t *testing.T) {

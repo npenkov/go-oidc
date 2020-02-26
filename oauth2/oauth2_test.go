@@ -10,7 +10,7 @@ import (
 	"strings"
 	"testing"
 
-	phttp "github.com/coreos/go-oidc/http"
+	phttp "github.com/npenkov/go-oidc/http"
 )
 
 func TestResponseTypesEqual(t *testing.T) {

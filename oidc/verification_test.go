@@ -4,8 +4,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/coreos/go-oidc/jose"
-	"github.com/coreos/go-oidc/key"
+	"github.com/npenkov/go-oidc/jose"
+	"github.com/npenkov/go-oidc/key"
 )
 
 func TestVerifyClientClaims(t *testing.T) {

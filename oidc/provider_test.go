@@ -17,8 +17,8 @@ import (
 	"github.com/kylelemons/godebug/diff"
 	"github.com/kylelemons/godebug/pretty"
 
-	"github.com/coreos/go-oidc/jose"
-	"github.com/coreos/go-oidc/oauth2"
+	"github.com/npenkov/go-oidc/jose"
+	"github.com/npenkov/go-oidc/oauth2"
 )
 
 func TestProviderConfigDefaults(t *testing.T) {
@@ -392,7 +392,7 @@ func TestProviderConfigSupports(t *testing.T) {
 				},
 			},
 			fillRequiredProviderFields: true,
-			ok: true,
+			ok:                         true,
 		},
 		{
 			// invalid provider config
@@ -403,14 +403,14 @@ func TestProviderConfigSupports(t *testing.T) {
 				},
 			},
 			fillRequiredProviderFields: false,
-			ok: false,
+			ok:                         false,
 		},
 		{
 			// invalid client config
-			provider: ProviderConfig{},
-			client:   ClientMetadata{},
+			provider:                   ProviderConfig{},
+			client:                     ClientMetadata{},
 			fillRequiredProviderFields: true,
-			ok: false,
+			ok:                         false,
 		},
 	}
 

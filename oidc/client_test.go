@@ -8,10 +8,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/coreos/go-oidc/jose"
-	"github.com/coreos/go-oidc/key"
-	"github.com/coreos/go-oidc/oauth2"
 	"github.com/kylelemons/godebug/pretty"
+	"github.com/npenkov/go-oidc/jose"
+	"github.com/npenkov/go-oidc/key"
+	"github.com/npenkov/go-oidc/oauth2"
 )
 
 func TestNewClientScopeDefault(t *testing.T) {

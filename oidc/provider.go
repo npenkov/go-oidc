@@ -14,8 +14,8 @@ import (
 	"github.com/coreos/pkg/timeutil"
 	"github.com/jonboulle/clockwork"
 
-	phttp "github.com/coreos/go-oidc/http"
-	"github.com/coreos/go-oidc/oauth2"
+	phttp "github.com/npenkov/go-oidc/http"
+	"github.com/npenkov/go-oidc/oauth2"
 )
 
 const (
@@ -248,8 +248,8 @@ func (cfg ProviderConfig) toEncodableStruct() encodableProviderConfig {
 		RequestParameterSupported:                  cfg.RequestParameterSupported,
 		RequestURIParamaterSupported:               cfg.RequestURIParamaterSupported,
 		RequireRequestURIRegistration:              cfg.RequireRequestURIRegistration,
-		Policy:         uriToString(cfg.Policy),
-		TermsOfService: uriToString(cfg.TermsOfService),
+		Policy:                                     uriToString(cfg.Policy),
+		TermsOfService:                             uriToString(cfg.TermsOfService),
 	}
 }
 
@@ -291,8 +291,8 @@ func (e encodableProviderConfig) toStruct() (ProviderConfig, error) {
 		RequestParameterSupported:                  e.RequestParameterSupported,
 		RequestURIParamaterSupported:               e.RequestURIParamaterSupported,
 		RequireRequestURIRegistration:              e.RequireRequestURIRegistration,
-		Policy:         p.parseURI(e.Policy, "op_policy-uri"),
-		TermsOfService: p.parseURI(e.TermsOfService, "op_tos_uri"),
+		Policy:                                     p.parseURI(e.Policy, "op_policy-uri"),
+		TermsOfService:                             p.parseURI(e.TermsOfService, "op_tos_uri"),
 	}
 	if p.firstErr != nil {
 		return ProviderConfig{}, p.firstErr
@@ -325,7 +325,7 @@ func contains(sli []string, ele string) bool {
 //
 // NOTE(ericchiang): For development purposes Valid does not mandate 'https' for
 // URLs fields where the OIDC spec requires it. This may change in future releases
-// of this package. See: https://github.com/coreos/go-oidc/issues/34
+// of this package. See: https://github.com/npenkov/go-oidc/issues/34
 func (p ProviderConfig) Valid() error {
 	grantTypes := p.GrantTypesSupported
 	if len(grantTypes) == 0 {
